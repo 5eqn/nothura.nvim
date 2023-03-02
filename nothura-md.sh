@@ -1,6 +1,6 @@
 # Generate a filename string with date like "~/md/20220124-1.md"
 # If the file exists, increase the last number like "~/md/20220124-2.md"
-DIR=~/lrn/md
+DIR=~/lrn
 filename=$DIR/$(date +%Y%m%d)-1.md
 while [ -f $filename ]; do
     num=$(echo $filename | sed -e 's/.*-\([0-9]*\)\.md/\1/')
