@@ -48,17 +48,16 @@ Clone 本工程后执行 `make install` 即可。
 
 ## 使用方式
 
-假设你使用 Neovim 打开了 `notes.md`，
-同时用 Zathura 打开了 `text.pdf`，
+假设你用 Zathura 打开了 `text.pdf`，
 你可以在 Zathura 中**标记页面**，
-这会在 `notes.md` 中插入一个标签：
+这会在你指定的目录里类似于 `20220104-1.md` 的文件中插入一个标签：
 
 ```markdown
 <~/pdf/2021A.pdf P2>
 ```
 
-如果你没有打开 `notes.md`，
-Zathura 将在你指定的目录创建一个以日期开头的不重名文件并打开。
+如果你保持打开这个新创建的文件，
+Zathura 将直接把笔记插入到光标后面。
 
 你也可以在 Neovim 中**查看页面**，
 这将会尝试打开目标文档，并且同步到标签中的页码。
