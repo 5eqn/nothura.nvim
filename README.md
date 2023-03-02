@@ -44,6 +44,8 @@ map ,n exec "nothura-md $FILE $PAGE"
 
 Clone 本工程后执行 `make install` 即可。
 
+可以通过修改 `nothura-md.sh` 的 `DIR` 来修改默认存放 Markdown 文件的位置。
+
 ## 使用方式
 
 假设你使用 Neovim 打开了 `notes.md`，
