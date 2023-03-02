@@ -4,6 +4,9 @@ local function get_title()
   local symbols = aerial.get_location(true)
 
   -- retrieve the last element of symbols
+  if #symbols == 0 then
+    return
+  end
   local symbol = symbols[#symbols]
   local name = symbol.name
   return name
@@ -35,10 +38,12 @@ function GotoZathura()
     goto_page(path, page)
   else
     local title = get_title()
-    local path2, page2 = find_path(title)
-    -- goto page if path and page are found
-    if path2 and page2 then
-      goto_page(path2, page2)
+    if title then
+      local path2, page2 = find_path(title)
+      -- goto page if path and page are found
+      if path2 and page2 then
+        goto_page(path2, page2)
+      end
     end
   end
 end
