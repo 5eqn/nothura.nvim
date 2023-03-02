@@ -21,6 +21,12 @@ use {
 }
 ```
 
+在 `init.lua` 中添加
+
+```lua
+require('nothura')
+```
+
 ### Zathura
 
 在 `~/.config/zathura/zathurarc` 增加一行配置：
