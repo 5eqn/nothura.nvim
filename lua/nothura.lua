@@ -42,6 +42,3 @@ function GotoZathura()
     end
   end
 end
-
--- map sync function to <Space>q
-vim.api.nvim_set_keymap('n', '<Space>q', ':lua GotoZathura()<CR>', { noremap = true, silent = true })

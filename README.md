@@ -25,39 +25,24 @@ use {
 
 ```lua
 require('nothura')
+vim.keymap.set('n', ',n', ':lua GotoZathura()<CR>', { noremap = true, silent = true })
 ```
+
+其中 `,n` 是用来从 Neovim 跳转到 Zathura 的快捷键，可以更换。
 
 ### Zathura
 
 在 `~/.config/zathura/zathurarc` 增加一行配置：
 
 ```
-map n exec "nothura-md $FILE $PAGE"
+map ,n exec "nothura-md $FILE $PAGE"
 ```
+
+快捷键依然可以更换。
 
 ### Bash
 
 Clone 本工程后执行 `make install` 即可。
-
-## 可行性验证
-
-- [x] Zathura 添加快捷键
-- [x] Zathura 执行 Bash 命令
-- [x] Zathura 向 Neovim 发送操作
-- [x] Zathura 获取页码 $PAGE
-- [x] Zathura 获取文件路径 $FILE
-- [x] Neovim 执行 Bash 命令
-- [x] Neovim 向 Zathura 发送操作
-- [x] Neovim 获取标题内容
-- [x] Neovim 获取选中行内容
-- [x] Bash 查找 Neovim 监听实例
-- [x] Bash 创建并打开不重名的文件
-
-## <~/pdf/2021A.pdf P4>
-
-content
-content
-content
 
 ## 使用方式
 
