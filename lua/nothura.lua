@@ -20,7 +20,7 @@ end
 
 -- find first <%path P%page> in given string
 local function find_path(str)
-  local path, page = string.match(str, "<(%S+) P(%d+)>")
+  local page, path = string.match(str, "%[P(%d+)%]%((%S+)%)")
   return path, page
 end
 
