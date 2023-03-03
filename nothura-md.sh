@@ -10,7 +10,7 @@ done
 # Judge if a neovim session is listening on the pipe
 if [ -S ~/.cache/nvim/server.pipe ]; then
     # If so, send the filename to the neovim session
-    nvim --remote-send "<Esc>:norm a<lt>$1<Space>P$2><CR>" --server ~/.cache/nvim/server.pipe
+    nvim --remote-send "<esc>o$3<lt>$1 P$2><cr>" --server ~/.cache/nvim/server.pipe
 else
     # If not, create a new neovim session
     alacritty -e nvim $filename -c ":norm i# $filename
