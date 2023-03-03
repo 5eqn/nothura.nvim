@@ -32,10 +32,11 @@ vim.keymap.set('n', ',n', ':lua GotoZathura()<CR>', { noremap = true, silent = t
 
 ### Zathura
 
-在 `~/.config/zathura/zathurarc` 增加一行配置：
+在 `~/.config/zathura/zathurarc` 增加两行配置：
 
 ```
-map ,n exec "nothura-md $FILE $PAGE"
+map n exec "nothura-md $FILE $PAGE"
+map ,n exec "nothura-md $FILE $PAGE '<cr>##<space>'"
 ```
 
 快捷键依然可以更换。
