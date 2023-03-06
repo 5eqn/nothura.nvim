@@ -58,7 +58,7 @@ vim.keymap.set('n', ',n', ':lua GotoZathura()<CR>', { noremap = true, silent = t
 
 ```
 map n exec "nothura-md $FILE $PAGE"
-map ,n exec "nothura-md $FILE $PAGE '<cr>##<space>'"
+map ,n exec "nothura-md $FILE $PAGE '##<space>'"
 ```
 
 快捷键依然可以更换。
