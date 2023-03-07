@@ -1,6 +1,6 @@
 # nothura.nvim
 
-[English Version](./README_en.md) is to be updated.
+[English Version](./README_en.md) is avaliable.
 
 基于 Neovim 和 Zathura 的极简主义知识管理方案。
 
