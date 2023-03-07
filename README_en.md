@@ -4,18 +4,70 @@ Minimal knowledge management solution based on Neovim and Zathura.
 
 ## Usage
 
-Suppose you opened a Markdown file `notes.md` with Neovim,
-and a PDF file `text.pdf` with Zathura,
-you can **tag page** in Zathura, adding a tag in `notes.md`:
+Suppose you opened a PDF file `text.pdf` with Zathura,
+you can **tag page** in Zathura, adding a tag in
+something like `20220104.md` in specified directory:
 
 ```markdown
-</path/to/text.pdf P114>
+[P2](~/pdf/2021A.pdf)
 ```
+
+If you keep the newly-created file,
+Zathura will insert the tag after your cursor.
 
 You can also **view page** in Neovim,
 it will try to open the document, and sync to requested page.
+If the link is as the title, you can jump to it whenever your cursor
+is in it's paragraph; Otherwise, you only need to select the row
+where the link is.
+If there are two links, the first would be preferred.
+If `text.pdf` isn't open, Neovim will open it for you.
 
 That's it!
+
+## Installation guide
+
+### Neovim
+
+Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
+
+```lua
+use {
+  'stevearc/aerial.nvim',
+  config = function() require('aerial').setup() end
+}
+use {
+  '5eqn/nothura.nvim',
+  requires = 'stevearc/aerial.nvim'
+}
+```
+
+Add these to your `init.lua`:
+
+```lua
+require('nothura')
+vim.keymap.set('n', ',n', ':lua GotoZathura()<CR>', { noremap = true, silent = true })
+```
+
+`,n` is the hotkey from Neovim to Zathura,
+you can change it according to your own preference.
+
+### Zathura
+
+Add these configuration to `~/.config/zathura/zathurarc`:
+
+```
+map n exec "nothura-md $FILE $PAGE"
+map ,n exec "nothura-md $FILE $PAGE '##<space>'"
+```
+
+### Bash
+
+Clone the project and execute `make install`,
+the make script will installed necessary shell scripts for you.
+
+You can change the default directory of Markdown files
+by modifying `DIR` in `nothura-md.sh`.
 
 ## Use cases
 
